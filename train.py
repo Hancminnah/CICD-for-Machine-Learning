@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import skops.io as sio
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
@@ -60,6 +61,7 @@ predictions = pipe.predict(X_test)
 cm = confusion_matrix(y_test, predictions, labels=pipe.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipe.classes_)
 disp.plot()
+print(os.getcwd())
 plt.savefig("./Results/model_results.png", dpi=120)
 
 ## Write metrics to file
