@@ -15,9 +15,12 @@ eval:
 	cml comment create report.md
 
 update-branch:
-	git config --global user.name $(USER_NAME)
-	git config --global user.email $(USER_EMAIL)
-	git commit -am "Update with new results"
+	@if [ -z "$(USER_NAME)" ]; then echo "ERROR: USER_NAME is required"; exit 1; fi
+	@if [ -z "$(USER_EMAIL)" ]; then echo "ERROR: USER_EMAIL is required"; exit 1; fi
+	git config --global user.name "$(USER_NAME)"
+	git config --global user.email "$(USER_EMAIL)"
+	git add .
+	git commit -m "Update with new results"
 	git push --force origin HEAD:update
 
 hf-login:
