@@ -45,7 +45,7 @@ pipe = Pipeline(
 pipe.fit(X_train, y_train)
 
 
-## Model Evaluation
+## Model Evaluation#
 predictions = pipe.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 f1 = f1_score(y_test, predictions, average="macro")
