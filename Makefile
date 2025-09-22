@@ -14,11 +14,6 @@ eval:
 	echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
 	cml comment create report.md
 
-update-branch:
-	git add .
-	git commit -m "Update with new results"
-	git push --force origin HEAD:update
-
 hf-login:
 	git fetch origin
 	git checkout update || git checkout -b update origin/update
