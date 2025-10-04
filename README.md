@@ -8,5 +8,3 @@ colorTo: blue
 pinned: false
 sdk_version: 5.46.1
 ---
-
-Tutorial from Datacamp: A Beginner's Guide to CI/CD for Machine Learning 
